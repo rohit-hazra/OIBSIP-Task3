@@ -1,0 +1,222 @@
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    padding: 16px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.stats {
+    font-size: 13px;
+    opacity: 0.95;
+}
+
+.stats span {
+    margin-left: 14px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 24px 20px;
+}
+
+.card {
+    background: #fff;
+    color: #333;
+    border-radius: 16px;
+    padding: 22px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+    margin-bottom: 30px;
+}
+
+.card h3 {
+    margin: 0 0 14px;
+    color: #444;
+}
+
+.card input,
+.card textarea {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 14px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 14px;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+.card input:focus,
+.card textarea:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.25);
+}
+
+.card button {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #43cea2, #185a9d);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card button:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
+
+.card button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.lists {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    align-items: start;
+}
+
+
+.list {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 18px;
+    border-radius: 16px;
+}
+
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.list-header span {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.pending-box {
+    border-left: 4px solid #ffca28;
+}
+
+.completed-box {
+    border-left: 4px solid #66bb6a;
+}
+
+.empty {
+    text-align: center;
+    padding: 30px 15px;
+    border-radius: 12px;
+    border: 2px dashed rgba(255, 255, 255, 0.35);
+    font-size: 14px;
+    opacity: 0.9;
+    /* max-width: 320px;
+    margin: 20px auto; */
+}
+
+.empty strong {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+
+.list h3 {
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.task {
+    background: #fff;
+    color: #333;
+    border-radius: 12px;
+    padding: 14px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    margin-bottom: 12px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.task:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.2);
+}
+
+.task small {
+    color: #666;
+    font-size: 12px;
+}
+
+.actions button {
+    border: none;
+    padding: 7px 10px;
+    margin-left: 4px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: opacity 0.2s;
+}
+
+.actions button:hover {
+    opacity: 0.85;
+}
+
+.complete {
+    background: #4caf50;
+    color: #fff;
+}
+
+.edit {
+    background: #ffc107;
+}
+
+.delete {
+    background: #f44336;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .lists {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+}
